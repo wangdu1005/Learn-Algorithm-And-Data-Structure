@@ -4,6 +4,14 @@
 # - Big Data 项目实战班，算法面试高频题班, 动态规划专题班
 # - 更多详情请见官方网站：http://www.jiuzhang.com/?source=code
 
+__author__ = "Wangdu Lin"
+__copyright__ = "Copyright 2018, The Algorithm Project"
+__credits__ = ["Wangdu Lin, jiuzhang"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Wangdu Lin"
+__email__ = "wangdu1005@gmail.com"
+__status__ = "Production"
 
 class Solution:
     # @param {string} source a source string
