@@ -1,5 +1,8 @@
 """
 
+Time:  O(n)
+Space: O(h), h is height of binary tree
+
 This problems easy but hard to understand. I finally figure out the logic by drawing the tree graphic.
 Reference: https://github.com/kamyu104/LeetCode/blob/master/Python/maximum-depth-of-binary-tree.py
 
