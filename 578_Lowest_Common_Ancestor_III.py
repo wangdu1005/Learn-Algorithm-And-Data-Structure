@@ -1,4 +1,8 @@
 """
+
+My solution on stack overflow:
+https://stackoverflow.com/questions/33723034/python-find-lowest-common-ancestor-of-two-nodes-in-a-binary-tree-if-not-all-of-t/49134813#49134813
+
 Definition of TreeNode:
 class TreeNode:
     def __init__(self, val):
