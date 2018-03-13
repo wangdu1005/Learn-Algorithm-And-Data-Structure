@@ -1,3 +1,12 @@
+__author__ = "Wangdu Lin"
+__copyright__ = "Copyright 2018, The Algorithm Project"
+__credits__ = ["Wangdu Lin, jiuzhang"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Wangdu Lin"
+__email__ = "wangdu1005@gmail.com"
+__status__ = "Production"
+
 class Solution:
     """
     @param: grid: a boolean 2D matrix

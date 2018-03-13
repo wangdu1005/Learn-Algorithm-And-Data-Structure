@@ -1,3 +1,12 @@
+__author__ = "Wangdu Lin"
+__copyright__ = "Copyright 2018, The Algorithm Project"
+__credits__ = ["Wangdu Lin, jiuzhang"]
+__license__ = "GPL"
+__version__ = "1.0.1"
+__maintainer__ = "Wangdu Lin"
+__email__ = "wangdu1005@gmail.com"
+__status__ = "Production"
+
 """
 
 My solution on stack overflow:
@@ -9,15 +18,6 @@ class TreeNode:
         this.val = val
         this.left, this.right = None, None
 """
-
-__author__ = "Wangdu Lin"
-__copyright__ = "Copyright 2018, The Algorithm Project"
-__credits__ = ["Wangdu Lin, jiuzhang"]
-__license__ = "GPL"
-__version__ = "1.0.1"
-__maintainer__ = "Wangdu Lin"
-__email__ = "wangdu1005@gmail.com"
-__status__ = "Production"
 
 class Solution:
     """

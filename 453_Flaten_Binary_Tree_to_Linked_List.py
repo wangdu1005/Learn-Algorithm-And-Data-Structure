@@ -1,11 +1,3 @@
-"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        this.val = val
-        this.left, this.right = None, None
-"""
-
 __author__ = "Wangdu Lin"
 __copyright__ = "Copyright 2018, The Algorithm Project"
 __credits__ = ["Wangdu Lin, jiuzhang"]
@@ -14,6 +6,14 @@ __version__ = "1.0.1"
 __maintainer__ = "Wangdu Lin"
 __email__ = "wangdu1005@gmail.com"
 __status__ = "Production"
+
+"""
+Definition of TreeNode:
+class TreeNode:
+    def __init__(self, val):
+        this.val = val
+        this.left, this.right = None, None
+"""
 
 class Solution:
     """
