@@ -26,7 +26,9 @@ class Solution:
         # print(list[2])
         
         result = []
-        indegree = [0 for i in range(numCourses)]
+        # indegree = [0 for i in range(numCourses)]
+        indegree = [0] * numCourses
+        # Graph can not init by indegree's way.
         graph = [[] for i in range(numCourses)]
         
         # count and update indegree
