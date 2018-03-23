@@ -22,38 +22,40 @@ class Solution:
     to serialize a binary tree which denote by a root node to a string which
     can be easily deserialized by your own "deserialize" method later.
     """
-    def serialize(self, root):    
+    def serialize(self, root):
+        # 1.Check input status
         if root is None:
             return "{}"
-            
+        
+        # 2.Transform Treenode into list by using while loop
         result = [root.val]
         q = collections.deque([root])
         while q:
             curr = q.popleft()
-
+            
             if curr.left is not None:
                 q.append(curr.left)
-
-            result.append(curr.left.val if curr.left is not None else None)
             
             if curr.right is not None:
                 q.append(curr.right)
             
+            result.append(curr.left.val if curr.left is not None else None)
             result.append(curr.right.val if curr.right is not None else None)
             
-        # Make sure the last element (leaf node) in result is not None,
-        # becasue we know leaf has two None child.
-        # So we loop the last index, if it is None then we remove it. 
+        # 3.From upper code to insert val to the list which will append extra None value at the end of leaf node,
+        # so must remove it, in order to make right string output.
         while result[-1] is None:
             result.pop()
-        
+
+        # 4.Transform list into string format, None value will be "#"
+        # 5.Then Return string
         def transform(val):
             if val is None:
                 return "#"
             else:
                 return str(val)
         
-        return '{' + ','.join(map(transform, result)) + '}'
+        return "{" + ",".join(map(transform, result)) + "}"
         
     """
     @param data: A string serialized by your serialize method.
@@ -64,21 +66,33 @@ class Solution:
     "serialize" method.
     """
     def deserialize(self, data):
-        if data == '{}':
+        # 1.Check None situation
+        if data == "{}":
             return None
+            
+        # 2.Transform string to list
+        rawData = data[1:-1].split(",")
+        print(data)
         
-        vals = data[1:-1].split(',')
-        nodes = collections.deque([None if o is None else TreeNode(o) for o in vals])
-        q = collections.deque([nodes.popleft()]) if nodes else None
-        root = q[0] if q else None
+        # 3.Transform list to queue
+        nodes = collections.deque([TreeNode(val) if val != "#" else None for val in rawData])
+        print(nodes)
+        
+        q = collections.deque([nodes.popleft()])
+        # 4.Assign the reference of first node to root variable, not copy it.
+        root = q[0]
+        
+        # 5.while loop the queue by BFS and popleft the nodes deque
         while q:
             parent = q.popleft()
-            left = nodes.popleft() if nodes else None
-            right = nodes.popleft() if nodes else None
+            left = nodes.popleft() if len(nodes) > 0 else None
+            right = nodes.popleft() if len(nodes) > 0 else None
             parent.left, parent.right = left, right
-            if left:
+            
+            if left is not None:
                 q.append(left)
-            if right:
+                
+            if right is not None:
                 q.append(right)
-
+                
         return root
