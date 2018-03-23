@@ -24,6 +24,7 @@ class Solution:
     @param k: the given k
     @return: the kth smallest element in BST
     """
+    # Solution1: Inorder Recursive Vesion
     count = 0
     index = 0
     def kthSmallest(self, root, k):
@@ -45,3 +46,19 @@ class Solution:
         # We will return answer if index == k, so index will never have chance to bigger than k.
         if self.index < k:
             self.findK(node.right, k)
+    
+    # Solution2: Iterative Vesion
+    def kthSmallest(self, root, k):
+        # Stack
+        s, curr, rank = [], root, 0
+        while s or curr:
+            if curr:
+                s.append(curr)
+                curr = curr.left
+            else:
+                curr = s.pop()
+                rank += 1
+                if rank == k:
+                    return curr.val
+                curr = curr.right
+        return float("-inf")
