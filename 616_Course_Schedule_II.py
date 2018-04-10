@@ -58,7 +58,7 @@ class Solution:
                 indegree[neighbor] -= 1
                 if indegree[neighbor] == 0:
                     q.append(neighbor)
-                
+
         if visited == numCourses:
             return result
             
